@@ -16,9 +16,11 @@ public class Task {
         List<Integer> numbers = extractedLine.stream().mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
         for (int i = 0; i < numbers.size(); i++) {
             for (int j = i + 1; j < numbers.size(); j++) {
-                if (numbers.get(i) + numbers.get(j) == 2020) {
-                    System.out.println(numbers.get(i) + ", and " + numbers.get(j));
-                    return numbers.get(i) * numbers.get(j);
+                for (int k = i + 1; k < numbers.size(); k++) {
+                    if (numbers.get(i) + numbers.get(j) + numbers.get(k) == 2020) {
+                        System.out.println(numbers.get(i) + ", and " + numbers.get(j) + ", and " + numbers.get(k));
+                        return numbers.get(i) * numbers.get(j) * numbers.get(k);
+                    }
                 }
             }
         }
