@@ -5,7 +5,7 @@ Made in collaboration with [@urbpeti](https://github.com/urbpeti)
 
 Each day got 2 problems, we try to solve them using a language we like, we also want to try out as many languages, as possible.
 
-You can find the programs and the instructions to run for the solutions in given folders _(dayXY)_ with some example data, so you can try it out as well.
+You can find the programs and the instructions to run the solutions in given folders _(dayXY)_ with some example data, so you can try it out as well.
 
 ## List of challenges
 
