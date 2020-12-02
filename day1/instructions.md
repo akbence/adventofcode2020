@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-1.) Install Java JDK (version 9 or more)
+1.) Install Java JDK (version 9 or more).
 
 ## Run
 
