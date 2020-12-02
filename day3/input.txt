@@ -1,0 +1,2 @@
+sample input line1
+sample input line2

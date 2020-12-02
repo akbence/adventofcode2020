@@ -13,3 +13,4 @@ You can find the programs and the instructions to run for the solutions in given
 |-------------- | -------------- | -------------- |
 | [Day 1](https://github.com/akbence/adventofcode2020/tree/main/day1)    | [Report Repair](https://github.com/akbence/adventofcode2020/blob/main/day1/task.md)     | Java     |
 | [Day 2](https://github.com/akbence/adventofcode2020/tree/main/day2)    | [Password Philosophy](https://github.com/akbence/adventofcode2020/blob/main/day2/task.md)     | JavaScript (ES6)     |
+| [Day 3](https://github.com/akbence/adventofcode2020/tree/main/day3)    | [TBA](https://github.com/akbence/adventofcode2020/blob/main/day3/task.md)     | Go     |
