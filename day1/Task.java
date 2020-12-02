@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Task {
     public static void main(String[] args) throws IOException {
-        List<String> extractedLine = Files.readAllLines(Paths.get("./day1/input.txt"));
+        List<String> extractedLine = Files.readAllLines(Paths.get("./input.txt"));
         Integer result = findEntriesAndMultiply(extractedLine);
         System.out.println("Task 1 solution: " + result);
         Integer task2Result = findThreeEntriesAndMultiply(extractedLine);
@@ -34,7 +34,7 @@ public class Task {
             for (int j = i + 1; j < numbers.size(); j++) {
                 for (int k = j + 1; k < numbers.size(); k++) {
                     if (numbers.get(i) + numbers.get(j) + numbers.get(k) == 2020) {
-                        System.out.println(numbers.get(i) + ", and " + numbers.get(j) + ", and" + numbers.get(k));
+                        System.out.println(numbers.get(i) + ", and " + numbers.get(j) + ", and " + numbers.get(k));
                         return numbers.get(i) * numbers.get(j) * numbers.get(k);
                     }
                 }
