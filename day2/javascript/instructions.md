@@ -6,7 +6,7 @@
 
 ## Run
 
-1.) Open terminal at day2 directory.
+1.) Open terminal at day2/javascript directory.
 
 2.) Run ```node task.js```
 
