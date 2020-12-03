@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-input = fs.readFileSync('../input.txt', 'utf-8').split(/\r?\n/);
+input = fs.readFileSync('../input.txt', 'utf-8').split(/\r?\n/).filter(x => x.length > 0);
 
 function parseLine(line) {
   const re = /(\d+)-(\d+) (.): (.+)/;
