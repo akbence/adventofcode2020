@@ -13,6 +13,6 @@ We would like to achieve, to finish all the task, with different programming lan
 
 | Day  | Problem   | Language   |
 |-------------- | -------------- | -------------- |
-| [Day 1](https://github.com/akbence/adventofcode2020/tree/main/day1)    | [Report Repair](https://github.com/akbence/adventofcode2020/blob/main/day1/task.md)     | R (also in Java)     |
-| [Day 2](https://github.com/akbence/adventofcode2020/tree/main/day2)    | [Password Philosophy](https://github.com/akbence/adventofcode2020/blob/main/day2/task.md)     | Bash (also in JavaScript (ES6))     |
-| [Day 3](https://github.com/akbence/adventofcode2020/tree/main/day3)    | [Toboggan Trajectory](https://github.com/akbence/adventofcode2020/blob/main/day3/task.md)     | Go     |
+| [Day 1](https://github.com/akbence/adventofcode2020/tree/master/day1)    | [Report Repair](https://github.com/akbence/adventofcode2020/blob/master/day1/task.md)     | R (also in Java)     |
+| [Day 2](https://github.com/akbence/adventofcode2020/tree/master/day2)    | [Password Philosophy](https://github.com/akbence/adventofcode2020/blob/master/day2/task.md)     | Bash (also in JavaScript (ES6))     |
+| [Day 3](https://github.com/akbence/adventofcode2020/tree/master/day3)    | [Toboggan Trajectory](https://github.com/akbence/adventofcode2020/blob/master/day3/task.md)     | Go     |
