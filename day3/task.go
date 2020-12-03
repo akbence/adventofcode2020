@@ -29,9 +29,10 @@ func readInput() []string {
 
 func main() {
 	task1()
+	task2()
 }
 
-func countTree(slope slope, christmasMap []string) int {
+func countTree(slope Slope, christmasMap []string) int {
 	treeCount := 0
 	currX := 0
 	for i := 0; i < len(christmasMap); i += slope.down {
@@ -43,13 +44,29 @@ func countTree(slope slope, christmasMap []string) int {
 	return treeCount
 }
 
-type slope struct {
+type Slope struct {
 	down  int
 	right int
 }
 
 func task1() {
 	var christmasMap = readInput()
-	slope := slope{1, 3}
+	slope := Slope{1, 3}
 	fmt.Println("Task1 solution: " + strconv.Itoa(countTree(slope, christmasMap)))
+}
+
+func task2() {
+	var christmasMap = readInput()
+	slopes := []Slope{
+		{1, 1},
+		{1, 3},
+		{1, 5},
+		{1, 7},
+		{2, 1},
+	}
+	mult := 1
+	for _, slope := range slopes {
+		mult *= countTree(slope, christmasMap)
+	}
+	fmt.Println("Task2 solution: " + strconv.Itoa(mult))
 }
