@@ -4,9 +4,11 @@
 
 1.) Install Java JDK (version 9 or more).
 
+You can get it from the Oracle's official website.
+
 ## Run
 
-1.) Open terminal at day1 directory
+1.) Open terminal at day1/java directory
 
 2.) Run ```java Task.java```
 

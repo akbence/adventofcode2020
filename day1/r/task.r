@@ -15,7 +15,7 @@
       for (i in 1:length(numbers)) {
          for (j in i:length(numbers)) {
             if (sum(numbers[[i]], numbers[[j]]) == 2020) {
-               print( numbers[[i]] * numbers[[j]] )   
+               cat("Task 2 solution:", numbers[[i]] * numbers[[j]] )   
             }
          }
       }
@@ -26,7 +26,7 @@
          for (j in i:length(numbers)) {
             for (k in j:length(numbers)) {
                if (sum(numbers[[i]], numbers[[j]], numbers[[k]]) == 2020) {
-                  print( numbers[[i]] * numbers[[j]]* numbers[[k]] )   
+                  cat("Task 2 solution:", numbers[[i]] * numbers[[j]]* numbers[[k]] )   
                }
             }
          }
@@ -36,4 +36,6 @@
 
 numbers <- read_input()
 task1(numbers)
+cat("\n")
 task2(numbers)
+cat("\n")
