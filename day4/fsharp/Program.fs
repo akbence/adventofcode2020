@@ -5,7 +5,7 @@ open System.IO
 open System.Collections.Generic
 open System.Text.RegularExpressions
 
-let filePath = "..\..\..\..\..\input.txt"
+let filePath = "../input.txt"
 let readLines = seq {
     use sr = new StreamReader (filePath)
     while not sr.EndOfStream do

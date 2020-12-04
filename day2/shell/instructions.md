@@ -8,11 +8,11 @@
 
 1.) Open terminal at day2/javascript directory.
 
-3.) Run ``` chmod +x task.sh```. This will give you permission, to run this code.
+2.) Run ``` chmod +x task.sh```. This will give you permission, to run this code.
 
-2.) Run ``` ./task.js```
+3.) Run ``` ./task.sh```
 
-3.) Expected result should be:
+4.) Expected result should be:
 
 ```
 Task1 solution: 614
