@@ -3,6 +3,7 @@
 open System
 open System.IO
 open System.Collections.Generic
+open System.Text.RegularExpressions
 
 let filePath = "..\..\..\..\..\input.txt"
 let readLines = seq {
@@ -27,7 +28,6 @@ let rec dictionaryLineProcessor dictionary element_list =
     | [] -> dictionary
 
 let validate (passport:Dictionary<string,string>) = 
-    let found, value = passport.TryGetValue "pid"
     passport.ContainsKey "byr" &&
     passport.ContainsKey "iyr" &&
     passport.ContainsKey "eyr" &&
@@ -36,8 +36,51 @@ let validate (passport:Dictionary<string,string>) =
     passport.ContainsKey "ecl" &&
     passport.ContainsKey "pid"
 
+let regexValidator pattern str = 
+    let m = Regex(pattern).Match(str)
+    m.Success
+
+let validateyear min max (year: string) =
+    match Int32.TryParse year with
+    | (true, year) -> year >= min && year <= max
+    | (false, _) -> false
+    
+let (|ParseRegex|_|) regex str =
+   let m = Regex(regex).Match(str)
+   if m.Success
+   then Some (List.tail [ for x in m.Groups -> x.Value ])
+   else None
+
+let validateHGT hgt = 
+    match hgt with
+    | ParseRegex "^(\d+)(cm|in)$" [value; m] ->
+        match Int32.TryParse value with
+        | (true, value) -> 
+            match m with
+            | "cm" -> 150 <= value && value <= 193
+            | "in" -> 59 <= value && value <= 76
+            | _ -> false
+        | (false, _) -> false
+    | _ -> false
+
 let validate2 (passport:Dictionary<string,string>) = 
-    true
+    let _, byr = passport.TryGetValue "byr"
+    let _, iyr = passport.TryGetValue "iyr"
+    let _, eyr = passport.TryGetValue "eyr"
+    let _, hgt = passport.TryGetValue "hgt"
+    let _, hcl = passport.TryGetValue "hcl"
+    let _, ecl = passport.TryGetValue "ecl"
+    let _, pid = passport.TryGetValue "pid"
+    let byr = validateyear 1920 2002 byr
+    let iyr = validateyear 2010 2020 iyr
+    let eyr = validateyear 2020 2030 eyr
+
+    let hcl = regexValidator "^#[a-f0-9]{6}$" hcl
+    let ecl = regexValidator "^(amb|blu|brn|gry|grn|hzl|oth)$" ecl
+    let pid = regexValidator "^\d{9}$" pid
+    let hgt = validateHGT hgt
+
+    byr && eyr && iyr && hcl && ecl && pid && hgt
 
 let countValid pred passports = 
     passports |> List.filter pred |> List.length
@@ -64,6 +107,7 @@ let task1 lines =
 let task2 lines =
     lines |> parsePassports |> List.filter validate |> countValid validate2
 
+
 [<EntryPoint>]
 let main argv =
     let lines = readLines |> Seq.toList
@@ -71,4 +115,5 @@ let main argv =
     printfn "Task2 solution: %d" (task2 lines)
     System.Console.ReadKey true
     0
+
 
