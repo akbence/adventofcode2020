@@ -4,7 +4,7 @@ open System
 open System.IO
 open System.Collections.Generic
 
-let filePath = "..\..\..\..\input.txt"
+let filePath = "..\..\..\..\..\input.txt"
 let readLines = seq {
     use sr = new StreamReader (filePath)
     while not sr.EndOfStream do
@@ -19,30 +19,56 @@ let dictionaryProcessor (dictionary: Dictionary<string, string>, element: string
     dictionary.Add(key, value)
     dictionary
 
-let dictionaryLineProcessor (dictionary: Dictionary<string, string>, element_list: seq<string>) =
-    let mutable new_dict = dictionary
-    for element in element_list do
-        new_dict <- dictionaryProcessor (new_dict, element)
-    new_dict
+let rec dictionaryLineProcessor dictionary element_list =
+    match element_list with
+    | a::tail ->
+        let new_dict = dictionaryProcessor (dictionary, a)
+        dictionaryLineProcessor new_dict tail
+    | [] -> dictionary
 
+let validate (passport:Dictionary<string,string>) = 
+    let found, value = passport.TryGetValue "pid"
+    passport.ContainsKey "byr" &&
+    passport.ContainsKey "iyr" &&
+    passport.ContainsKey "eyr" &&
+    passport.ContainsKey "hgt" &&
+    passport.ContainsKey "hcl" &&
+    passport.ContainsKey "ecl" &&
+    passport.ContainsKey "pid"
+
+let validate2 (passport:Dictionary<string,string>) = 
+    true
+
+let countValid pred passports = 
+    passports |> List.filter pred |> List.length
+
+let rec parsePassportsHelper lines passports actual_passport = 
+    match lines with
+    | [] -> passports |> List.append [actual_passport]
+    | line::tail ->
+        match line with
+        | "" ->
+            let dict = Dictionary<string, string>()
+            parsePassportsHelper tail (List.append passports [actual_passport]) dict
+        | _ ->
+        let new_passport = dictionaryLineProcessor actual_passport (line.Split(" ") |> Array.toList)
+        parsePassportsHelper tail passports new_passport
+
+let parsePassports lines = 
+    let dict = Dictionary<string, string>()
+    parsePassportsHelper lines [] dict
+
+let task1 lines =
+    lines |> parsePassports |> countValid validate
+
+let task2 lines =
+    lines |> parsePassports |> List.filter validate |> countValid validate2
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    let lines = readLines
-    let mutable lista = Seq.empty
-    let mutable dictionary: Dictionary<string, string> = Dictionary<string, string>()
-    for line in lines do
-        if line.Equals("") then
-            printfn "%A" dictionary
-            lista <- Seq.append lista dictionary
-            printfn "%A" lista
-            dictionary <- Dictionary<string, string>()
-        else
-            printfn "KAKAO 2"
-            dictionary <- dictionaryLineProcessor (dictionary, line.Split " ")
-
-    printfn "%A" (lista |> Seq.head)
+    let lines = readLines |> Seq.toList
+    printfn "Task1 solution: %d" (task1 lines)
+    printfn "Task2 solution: %d" (task2 lines)
     System.Console.ReadKey true
-    0 // return an integer exit code
+    0
 
