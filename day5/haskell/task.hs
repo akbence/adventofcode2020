@@ -31,11 +31,11 @@ decodeLine a = do
 
 task2 :: [Integer] -> Integer
 task2 [] = 0
-task2 (a:b:xs) = kakao a b xs
+task2 (a:b:xs) = task2helper a b xs
 
-kakao :: Integer -> Integer -> [Integer] -> Integer
-kakao a b [] = 0
-kakao a b xs
+task2helper :: Integer -> Integer -> [Integer] -> Integer
+task2helper a b [] = 0
+task2helper a b xs
   | a + 2 == b = a + 1
   | otherwise = task2 ([b] ++ xs)
 

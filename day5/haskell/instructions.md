@@ -17,7 +17,7 @@
 5.) Expected result should be:
 
 ```
-Task1 solution: 123
-Task2 solution: 345
+Task1 solution: 996
+Task2 solution: 671
 ```
 
