@@ -1,5 +1,6 @@
 import System.IO
 import Debug.Trace
+import Data.List
 
 trimnl = reverse . dropWhile (=='\n') . reverse
 takeLastN n = reverse . take n . reverse
@@ -28,9 +29,19 @@ decodeLine a = do
   let column = decodeColumn (takeLastN 3 a)
   row * 8 + column
 
+task2 :: [Integer] -> Integer
+task2 [] = 0
+task2 (a:b:xs) = kakao a b xs
+
+kakao :: Integer -> Integer -> [Integer] -> Integer
+kakao a b [] = 0
+kakao a b xs
+  | a + 2 == b = a + 1
+  | otherwise = task2 ([b] ++ xs)
 
 main = do
   content <- readFile "../input.txt"
   let linesOfFiles = lines content
-  let lines = (map (decodeLine . trimnl) linesOfFiles)
+  let lines = (sort (map (decodeLine . trimnl) linesOfFiles))
   putStrLn ("Task1 solution: " ++ (show (maximum lines)))
+  putStrLn ("Task2 solution: " ++ (show (task2 lines)))
