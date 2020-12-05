@@ -17,5 +17,6 @@
 5.) Expected result should be:
 
 ```
-TODO
+Task1 solution: 170
+Task2 solution: 103
 ```

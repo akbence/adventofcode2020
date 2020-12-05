@@ -17,4 +17,4 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 2](https://github.com/akbence/adventofcode2020/tree/master/day2)    | [Password Philosophy](https://github.com/akbence/adventofcode2020/blob/master/day2/task.md)     | Bash (also in JavaScript (ES6))     |
 | [Day 3](https://github.com/akbence/adventofcode2020/tree/master/day3)    | [Toboggan Trajectory](https://github.com/akbence/adventofcode2020/blob/master/day3/task.md)     | Go     |
 | [Day 4](https://github.com/akbence/adventofcode2020/tree/master/day4)    | [Passport Processing](https://github.com/akbence/adventofcode2020/blob/master/day4/task.md)     | F# (also in Python)     |
-| [Day 5](https://github.com/akbence/adventofcode2020/tree/master/day5)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day5/task.md)     |      |
+| [Day 5](https://github.com/akbence/adventofcode2020/tree/master/day5)    | [Binary Boarding](https://github.com/akbence/adventofcode2020/blob/master/day5/task.md)     |  Haskell    |
