@@ -2,17 +2,17 @@
 
 ## Prerequisites
 
-1.) Install FreePascal (fpc) (this test was successful on v3.2.0).
+1.) Install .
 
 ## Run
 
-1.) Open terminal at day6/pascal directory.
+1.) Open terminal at day7/groovy directory.
 
 2.) Run ```fpc task.pp```
 
 3.) It generates the output, run  ```./task```
 
-4.) Expected result should be:
+3.) Expected result should be:
 
 ```
 Task1 solution: 614
