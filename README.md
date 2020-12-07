@@ -19,3 +19,4 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 4](https://github.com/akbence/adventofcode2020/tree/master/day4)    | [Passport Processing](https://github.com/akbence/adventofcode2020/blob/master/day4/task.md)     | F# (also in Python)     |
 | [Day 5](https://github.com/akbence/adventofcode2020/tree/master/day5)    | [Binary Boarding](https://github.com/akbence/adventofcode2020/blob/master/day5/task.md)     |  Haskell    |
 | [Day 6](https://github.com/akbence/adventofcode2020/tree/master/day6)    | [Custom Customs](https://github.com/akbence/adventofcode2020/blob/master/day6/task.md)     |  Pascal    |
+| [Day 7](https://github.com/akbence/adventofcode2020/tree/master/day7)    | [Handy Haversacks](https://github.com/akbence/adventofcode2020/blob/master/day7/task.md)     |  Groovy    |
