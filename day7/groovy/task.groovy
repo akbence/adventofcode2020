@@ -5,26 +5,22 @@ int readFileLineByLine(String filePath) {
     def line, noOfLines = 0;
     file.withReader { reader ->
         while ((line = reader.readLine()) != null) {
-            println "${line}"
             noOfLines++
         }
     }
     return noOfLines
 }
 
-class Tree{
-    def color = String 
-    def additionalBags = []
-    def actual = Tree
+class Bag{
+    def id
+    def children
+    def parents = []
 
-    static Tree startTree(){
-        Tree tree = new Tree();
-        tree.actual = tree;
-        tree.additionalBags = []
-        tree.color = "ROOT";
-        return tree
+    Bag(id, children) {
+        this.id = id
+        this.children = children
+        this.parents = []
     }
-
 }
 
 class ColoredNumberedBag{
@@ -32,32 +28,55 @@ class ColoredNumberedBag{
     def quantity = int
 }
 
-Tree buildTree(Tree tree, ColoredNumberedBag[] list){
-
-}
-
-def parseLine(String line){
-    def words = [];
-    words = line.split()
-    println(words)
-    for (word in words) {
-        println(word)
-    }
+def parseLine(String line, Map bags){
+    def id = line.split(" bags contain ")[0]
     def pattern = ~/(\d+) (\w+ \w+) bag/
-    def matches = line.findAll(pattern)
-    println (matches)
-    //println(words.length())
+    def matches = pattern.matcher(line)
+    def children = [];
+    for (match in matches) {
+        children.add([match[1], match[2]])
+    }
 
+    bags[id] = new Bag(id, children)
 }
 
 
 //Main
-Tree tree = Tree.startTree()
+def bags = [:]
 new File("../input.txt").withReader('UTF-8') { reader ->
 def line
     while ((line = reader.readLine()) != null) {
-        def mytree= new Tree(); 
-        println "${line}"
-        parseLine(line)
+        parseLine(line, bags)
     }
 }
+
+for (bag in bags) {
+    def children = bag.value.children
+    for (child in children) {
+        bags[child[1]].parents.add(bag.key)
+    }
+}
+
+def collect_ancestor(id, bags) {
+  Set parents = bags[id].parents
+  for (parent in bags[id].parents) {
+    parents = parents.plus(collect_ancestor(parent, bags))
+  }
+  return parents
+}
+
+def descendant_count(id, bags) {
+  def children = bags[id].children
+  def sum = 0
+  for (child in children) {
+      def count = child[0] as Integer
+      sum = sum + (descendant_count(child[1], bags) * count)
+      sum = sum + count
+  }
+
+  return sum
+}
+
+
+println("Task1 solution: " + collect_ancestor("shiny gold", bags).size())
+println("Task2 solution: " + descendant_count("shiny gold", bags))
