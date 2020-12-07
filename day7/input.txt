@@ -1,7 +1,2 @@
-sample input1
-sample input2
-sample input3
-
-sample input4
-sample input5
-
+shiny indigo bags contain 4 vibrant lime bags.
+clear lime bags contain 1 dotted lime bag, 2 clear gold bags.
