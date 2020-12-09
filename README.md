@@ -20,5 +20,7 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 5](https://github.com/akbence/adventofcode2020/tree/master/day5)    | [Binary Boarding](https://github.com/akbence/adventofcode2020/blob/master/day5/task.md)     |  Haskell    |
 | [Day 6](https://github.com/akbence/adventofcode2020/tree/master/day6)    | [Custom Customs](https://github.com/akbence/adventofcode2020/blob/master/day6/task.md)     |  Pascal    |
 | [Day 7](https://github.com/akbence/adventofcode2020/tree/master/day7)    | [Handy Haversacks](https://github.com/akbence/adventofcode2020/blob/master/day7/task.md)     |  Groovy    |
-| [Day 8](https://github.com/akbence/adventofcode2020/tree/master/day8)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day8/task.md)     |  Rust    |
+| [Day 8](https://github.com/akbence/adventofcode2020/tree/master/day8)    | [Handheld Halting](https://github.com/akbence/adventofcode2020/blob/master/day8/task.md)     |  Rust    |
+| [Day 9](https://github.com/akbence/adventofcode2020/tree/master/day9)    | [Encoding Error](https://github.com/akbence/adventofcode2020/blob/master/day9/task.md)     |  C    |
+| [Day 10](https://github.com/akbence/adventofcode2020/tree/master/day10)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day10/task.md)     |  Perl    |
 
