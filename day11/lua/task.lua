@@ -41,7 +41,7 @@ function nextSeats1(seats)
     table.insert(newSeats, {table.unpack(seats[row])})
   end
 
-  local ds = {{0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}} -- directions, nem de az csak plusz 1 ciklus
+  local ds = {{0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}}
 
   for i = 2,#seats - 1 do
     for j = 2,#seats[i] - 1 do
