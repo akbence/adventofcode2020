@@ -1,5 +1,13 @@
 # !/usr/bin/perl 
+use Class::Struct;
 
+struct( Node => [
+    node_index  => '$',
+    connected_nodes => '@', 
+]);
+
+my @nodes=();
+my $counter=0;
 
 sub fileRead()
 {    
@@ -52,6 +60,28 @@ sub searchWay {
     return $result;
 }
 
+
+sub dfsRecursive {
+    printf ("called");
+    my $u = $_[1];
+    my $d = $_[2];
+    my (@visited) = @{$_[0]};
+
+    if($u == $d){
+        $counter++;
+        return;
+    }
+
+    $visited[$u] = 1;
+    for $adj (@nodes[$u]->connected_nodes){
+        if($visited[$adj] == 0){
+            dfsRecursive(\@visited,$adj,$d);
+        }
+
+    }
+    $visited[$u] = 0;
+}
+
 sub task2(@lines){
     
     #add first and last elements
@@ -60,9 +90,33 @@ sub task2(@lines){
     @sorted_lines = sort { $a <=> $b } @lines;
     push(@sorted_lines, $sorted_lines[-1]+3);
     $startIndex=0;
-    $size= scalar @sorted_lines;
-    $solution= searchWay(\@sorted_lines,$startIndex, $size-1);
-    printf("Task2 solution: %d", $solution);
+
+    my $size= scalar @sorted_lines;
+    my $iter=0;
+    
+    for $number (@sorted_lines) {
+        my @connections = ();
+        if(($iter + 1 < $size) && ($sorted_lines[$iter+1] - $sorted_lines[$iter] <=3 )){
+            push(@connections, $iter+1);
+        }
+        if(($iter + 2 < $size )&& ($sorted_lines[$iter+2] - $sorted_lines[$iter] <=3 )){
+            push(@connections, $iter+2);
+        }
+        if(($iter + 3 < $size) && ($sorted_lines[$iter+3] - $sorted_lines[$iter] <=3 )){
+            push(@connections, $iter+3);
+        }
+        my $t = Node->new(node_index=>$iter,
+            connected_nodes=>\@connections);
+        push(@nodes, $t);
+        $iter++;
+    }
+
+    my @visited = (0) x scalar @nodes;
+    dfsRecursive( \@visited,$nodes[0]->node_index,$nodes[-1]->node_index);
+        
+        
+#    $solution= searchWay(\@sorted_lines,$startIndex, $size-1);
+ #   printf("Task2 solution: %d", $solution);
 }
 
 
