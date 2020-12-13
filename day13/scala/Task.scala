@@ -36,11 +36,21 @@ object Task {
             }
         }
 
-        var max1 = busIdArray.sorted(Ordering.Long.reverse)(0).toLong
-        var max2 = busIdArray.sorted(Ordering.Long.reverse)(1).toLong
+        var firstElement = busIdArray(0).toLong
+        var maxElement = busIdArray.sorted(Ordering.Long.reverse)(0).toLong
+        var maxElement2 = busIdArray.sorted(Ordering.Long.reverse)(1).toLong
         var notFound = true
-        var actualTimeStamp:Long = 19L-3L
-        var testcntr= 0;
+        var maxElementOffset:Long = map.getOrElse(default = 0L, key = maxElement)
+        var maxElementOffset2:Long = map.getOrElse(default = 0L, key = maxElement2)
+        var counter = 1L;
+        println(maxElement +" " + maxElementOffset )
+        println(firstElement +" ")
+        while(((maxElement2*counter) -maxElementOffset2 + maxElementOffset) % maxElement != 0){
+            //println(firstElement*counter)
+            counter +=1
+        }
+        println("counter: "+ counter)
+        var actualTimeStamp:Long = (maxElement2*counter) - maxElementOffset2
         while(notFound){
             var localCheck = true
             println("ACTUAL: "+ actualTimeStamp)
@@ -52,14 +62,15 @@ object Task {
             if(localCheck){
                 notFound=false;
             }
-            actualTimeStamp += max1 * 17 //map.getOrElse(default = 0L, key = max2) //max1*max2
-            testcntr +=1;
-
-            if( actualTimeStamp >= 4000){
-                notFound=false
+            else{
+                actualTimeStamp += maxElement2 * maxElement
             }
+
+            // if( actualTimeStamp >= 4000){
+            //     notFound=false
+            // }
         }
-        actualTimeStamp - 1
+        actualTimeStamp
     }
     
     def main(args: Array[String]) = {
