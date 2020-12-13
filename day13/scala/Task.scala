@@ -36,41 +36,23 @@ object Task {
             }
         }
 
-        var firstElement = busIdArray(0).toLong
-        var maxElement = busIdArray.sorted(Ordering.Long.reverse)(0).toLong
-        var maxElement2 = busIdArray.sorted(Ordering.Long.reverse)(1).toLong
-        var notFound = true
-        var maxElementOffset:Long = map.getOrElse(default = 0L, key = maxElement)
-        var maxElementOffset2:Long = map.getOrElse(default = 0L, key = maxElement2)
-        var counter = 1L;
-        println(maxElement +" " + maxElementOffset )
-        println(firstElement +" ")
-        while(((maxElement2*counter) -maxElementOffset2 + maxElementOffset) % maxElement != 0){
-            //println(firstElement*counter)
+        var actualTimeStamp:Long = 0L
+        var currBusIdProduct:Long = 1L
+        for (element <- busIdArray){
+            var offset:Long = map.getOrElse(default = 0L, key = element)
+            actualTimeStamp = calcNextTimestamp(actualTimeStamp, element, offset, currBusIdProduct)
+            currBusIdProduct *= element
+        }
+
+        actualTimeStamp
+    }
+
+    def calcNextTimestamp(actual : Long, element: Long, offset: Long, currBusIdProduct: Long):Long = {
+        var counter = 0L;
+        while((actual + currBusIdProduct*counter + offset) %  element != 0){
             counter +=1
         }
-        println("counter: "+ counter)
-        var actualTimeStamp:Long = (maxElement2*counter) - maxElementOffset2
-        while(notFound){
-            var localCheck = true
-            println("ACTUAL: "+ actualTimeStamp)
-            for ((busid, offset) <- map){
-                if((actualTimeStamp + offset)%busid != 0){
-                    localCheck=false
-                }
-            }
-            if(localCheck){
-                notFound=false;
-            }
-            else{
-                actualTimeStamp += maxElement2 * maxElement
-            }
-
-            // if( actualTimeStamp >= 4000){
-            //     notFound=false
-            // }
-        }
-        actualTimeStamp
+        actual + currBusIdProduct*counter
     }
     
     def main(args: Array[String]) = {
