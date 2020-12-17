@@ -24,6 +24,9 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 9](https://github.com/akbence/adventofcode2020/tree/master/day9)    | [Encoding Error](https://github.com/akbence/adventofcode2020/blob/master/day9/task.md)     |  C    |
 | [Day 10](https://github.com/akbence/adventofcode2020/tree/master/day10)    | [Adapter Array](https://github.com/akbence/adventofcode2020/blob/master/day10/task.md)     |  Perl    |
 | [Day 11](https://github.com/akbence/adventofcode2020/tree/master/day11)    | [Seating System](https://github.com/akbence/adventofcode2020/blob/master/day11/task.md)     |  Lua   |
-| [Day 12](https://github.com/akbence/adventofcode2020/tree/master/day12)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day12/task.md)     |  Swift   |
-| [Day 13](https://github.com/akbence/adventofcode2020/tree/master/day13)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day13/task.md)     |  Scala   |
-| [Day 14](https://github.com/akbence/adventofcode2020/tree/master/day14)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day14/task.md)     |  PHP   |
+| [Day 12](https://github.com/akbence/adventofcode2020/tree/master/day12)    | [Rain Risk](https://github.com/akbence/adventofcode2020/blob/master/day12/task.md)     |  Swift   |
+| [Day 13](https://github.com/akbence/adventofcode2020/tree/master/day13)    | [Shuttle Search](https://github.com/akbence/adventofcode2020/blob/master/day13/task.md)     |  Scala   |
+| [Day 14](https://github.com/akbence/adventofcode2020/tree/master/day14)    | [Docking Data](https://github.com/akbence/adventofcode2020/blob/master/day14/task.md)     |  PHP   |
+| [Day 15](https://github.com/akbence/adventofcode2020/tree/master/day15)    | [Rambunctious Recitation](https://github.com/akbence/adventofcode2020/blob/master/day15/task.md)     |  Julia   |
+| [Day 16](https://github.com/akbence/adventofcode2020/tree/master/day16)    | [Ticket Translation](https://github.com/akbence/adventofcode2020/blob/master/day16/task.md)     |  kotlin   |
+| [Day 17](https://github.com/akbence/adventofcode2020/tree/master/day17)    | [Conway Cubes](https://github.com/akbence/adventofcode2020/blob/master/day17/task.md)     |  Cpp   |
