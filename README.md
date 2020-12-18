@@ -13,15 +13,15 @@ We would like to achieve, to finish all the task, with different programming lan
 
 | Day  | Problem   | Language   |
 |-------------- | -------------- | -------------- |
-| [Day 1](https://github.com/akbence/adventofcode2020/tree/master/day1)    | [Report Repair](https://github.com/akbence/adventofcode2020/blob/master/day1/task.md)     | R (also in Java)     |
-| [Day 2](https://github.com/akbence/adventofcode2020/tree/master/day2)    | [Password Philosophy](https://github.com/akbence/adventofcode2020/blob/master/day2/task.md)     | Bash (also in JavaScript (ES6))     |
-| [Day 3](https://github.com/akbence/adventofcode2020/tree/master/day3)    | [Toboggan Trajectory](https://github.com/akbence/adventofcode2020/blob/master/day3/task.md)     | Go     |
-| [Day 4](https://github.com/akbence/adventofcode2020/tree/master/day4)    | [Passport Processing](https://github.com/akbence/adventofcode2020/blob/master/day4/task.md)     | F# (also in Python)     |
-| [Day 5](https://github.com/akbence/adventofcode2020/tree/master/day5)    | [Binary Boarding](https://github.com/akbence/adventofcode2020/blob/master/day5/task.md)     |  Haskell    |
-| [Day 6](https://github.com/akbence/adventofcode2020/tree/master/day6)    | [Custom Customs](https://github.com/akbence/adventofcode2020/blob/master/day6/task.md)     |  Pascal    |
-| [Day 7](https://github.com/akbence/adventofcode2020/tree/master/day7)    | [Handy Haversacks](https://github.com/akbence/adventofcode2020/blob/master/day7/task.md)     |  Groovy    |
-| [Day 8](https://github.com/akbence/adventofcode2020/tree/master/day8)    | [Handheld Halting](https://github.com/akbence/adventofcode2020/blob/master/day8/task.md)     |  Rust    |
-| [Day 9](https://github.com/akbence/adventofcode2020/tree/master/day9)    | [Encoding Error](https://github.com/akbence/adventofcode2020/blob/master/day9/task.md)     |  C    |
+| [Day 1](https://github.com/akbence/adventofcode2020/tree/master/day01)    | [Report Repair](https://github.com/akbence/adventofcode2020/blob/master/day01/task.md)     | R (also in Java)     |
+| [Day 2](https://github.com/akbence/adventofcode2020/tree/master/day02)    | [Password Philosophy](https://github.com/akbence/adventofcode2020/blob/master/day02/task.md)     | Bash (also in JavaScript (ES6))     |
+| [Day 3](https://github.com/akbence/adventofcode2020/tree/master/day03)    | [Toboggan Trajectory](https://github.com/akbence/adventofcode2020/blob/master/day03/task.md)     | Powershell (also in Go)     |
+| [Day 4](https://github.com/akbence/adventofcode2020/tree/master/day04)    | [Passport Processing](https://github.com/akbence/adventofcode2020/blob/master/day04/task.md)     | F# (also in Python)     |
+| [Day 5](https://github.com/akbence/adventofcode2020/tree/master/day05)    | [Binary Boarding](https://github.com/akbence/adventofcode2020/blob/master/day05/task.md)     |  Haskell    |
+| [Day 6](https://github.com/akbence/adventofcode2020/tree/master/day06)    | [Custom Customs](https://github.com/akbence/adventofcode2020/blob/master/day06/task.md)     |  Pascal    |
+| [Day 7](https://github.com/akbence/adventofcode2020/tree/master/day07)    | [Handy Haversacks](https://github.com/akbence/adventofcode2020/blob/master/day07/task.md)     |  Groovy    |
+| [Day 8](https://github.com/akbence/adventofcode2020/tree/master/day08)    | [Handheld Halting](https://github.com/akbence/adventofcode2020/blob/master/day08/task.md)     |  Rust    |
+| [Day 9](https://github.com/akbence/adventofcode2020/tree/master/day09)    | [Encoding Error](https://github.com/akbence/adventofcode2020/blob/master/day09/task.md)     |  C    |
 | [Day 10](https://github.com/akbence/adventofcode2020/tree/master/day10)    | [Adapter Array](https://github.com/akbence/adventofcode2020/blob/master/day10/task.md)     |  Perl    |
 | [Day 11](https://github.com/akbence/adventofcode2020/tree/master/day11)    | [Seating System](https://github.com/akbence/adventofcode2020/blob/master/day11/task.md)     |  Lua   |
 | [Day 12](https://github.com/akbence/adventofcode2020/tree/master/day12)    | [Rain Risk](https://github.com/akbence/adventofcode2020/blob/master/day12/task.md)     |  Swift   |
