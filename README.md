@@ -30,4 +30,4 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 15](https://github.com/akbence/adventofcode2020/tree/master/day15)    | [Rambunctious Recitation](https://github.com/akbence/adventofcode2020/blob/master/day15/task.md)     |  Julia   |
 | [Day 16](https://github.com/akbence/adventofcode2020/tree/master/day16)    | [Ticket Translation](https://github.com/akbence/adventofcode2020/blob/master/day16/task.md)     |  kotlin   |
 | [Day 17](https://github.com/akbence/adventofcode2020/tree/master/day17)    | [Conway Cubes](https://github.com/akbence/adventofcode2020/blob/master/day17/task.md)     |  C++   |
-| [Day 18](https://github.com/akbence/adventofcode2020/tree/master/day18)    | [Conway Cubes](https://github.com/akbence/adventofcode2020/blob/master/day18/task.md)     |  Ruby (also in Python)   |
+| [Day 18](https://github.com/akbence/adventofcode2020/tree/master/day18)    | [Operation Order](https://github.com/akbence/adventofcode2020/blob/master/day18/task.md)     |  Ruby (also in Python)   |
