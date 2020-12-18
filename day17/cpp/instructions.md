@@ -8,7 +8,7 @@
 
 1.) Open terminal at day17/cpp directory.
 
-2.) Run ```g++ task.cpp task.cpp -o task```
+2.) Run ```g++ task.cpp -o task```
 
 3.) Run ```task```
 
