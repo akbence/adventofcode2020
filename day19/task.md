@@ -23,7 +23,8 @@ Some of the rules have multiple lists of sub-rules separated by a pipe (|). This
 Fortunately, there are no loops in the rules, so the list of possible matches will be finite. Since rule 1 matches a and rule 3 matches b, rule 2 matches either ab or ba. Therefore, rule 0 matches aab or aba.
 
 Here's a more interesting example:
-
+Task1 solution: 139
+Task2 solution: 289
 ```
 0: 4 1 5
 1: 2 3 | 3 2
