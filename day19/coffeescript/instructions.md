@@ -6,7 +6,7 @@
 
 ## Run
 
-1.) Open terminal at day17/cpp directory.
+1.) Open terminal at day19/coffeescript directory.
 
 2.) Run ```coffee task.coffee```
 

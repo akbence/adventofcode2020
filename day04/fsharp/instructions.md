@@ -3,6 +3,7 @@
 ## Prerequisites
 
 1.) You will need to run _bash_, which is the default for a Linux terminal. Windows 10 has also support for Linux subsystem.
+2.) Install dotnet
 
 ## Run
 
