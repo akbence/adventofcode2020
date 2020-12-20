@@ -23,6 +23,37 @@ namespace CSharp
             sides = new List<string> { top, right, bottom, left };
         }
 
+        static public List<string> flipList(List<string> li)
+        {
+            return li.Select(x => String.Join("", x.Reverse())).ToList();
+        }
+
+        static public List<string> rotateListCCW(List<string> li)
+        {
+            var newL = new List<string>();
+            for (int j = li[0].Length - 1; j >= 0; j--)
+            {
+                newL.Add(String.Join("", li.Select(x => x.ElementAt(j))));
+            }
+            return newL;
+        }
+
+        public List<string> GetOrientedLinesWithOutBorder()
+        {
+            var res = lines.GetRange(1, lines.Count - 2)
+                .Select(x => x.Substring(1, x.Length - 2))
+                .ToList();
+            if (isFlipped)
+            {
+                res = flipList(res);
+            }
+            for (int i = 0; i < orientation; i++)
+            {
+                res = rotateListCCW(res);
+            }
+            return res;
+        }
+
         public void rotateTile()
         {
             orientation = (orientation + 1) % 4;
@@ -59,14 +90,6 @@ namespace CSharp
                     Tile neightbour;
                     if (map.TryGetValue((pos.Item1 + 1, pos.Item2), out neightbour) && neightbour.sides[2] != top)
                     {
-                        if (pos.Equals((0, 1)) && tile.ID == 3079)
-                        {
-                            Console.WriteLine(i);
-                            Console.WriteLine(top);
-                            Console.WriteLine(neightbour.ID);
-                            Console.WriteLine(neightbour.sides[2]);
-                            Console.WriteLine("===============");
-                        }
                         tile.rotateTile();
                         continue;
                     }
@@ -144,6 +167,48 @@ namespace CSharp
             return newUnused;
         }
 
+        static int matchPattern(List<string> pattern, List<string> map)
+        {
+            int found = 0;
+            for (int i = 0; i < map[0].Length - pattern[0].Length + 1; i++)
+            {
+                for (int j = 0; j < map.Count - pattern.Count + 1; j++)
+                {
+                    bool valid = true;
+                    for (int pj = 0; pj < pattern.Count; pj++)
+                    {
+                        for (int pi = 0; pi < pattern[0].Length; pi++)
+                        {
+                            if (pattern[pj][pi] == '#' && map[j+pj][i+pi] != '#')
+                            {
+                                valid = false;
+                            }
+                            if (!valid)
+                            {
+                                break;
+                            }
+                        }
+                        if (!valid)
+                        {
+                            break;
+                        }
+                    }
+                    if (valid)
+                    {
+                        found += 1;
+                    }
+                }
+
+            }
+
+            return found;
+        }
+
+        static public int count(List<string> li, char ch)
+        {
+            return li.Select(x => x.Select(c => c == ch ? 1 : 0).Sum()).Sum();
+        }
+
         static void Main(string[] args)
         {
             var lines = readInput();
@@ -177,7 +242,54 @@ namespace CSharp
             map.TryGetValue((bottom, left), out bottomleft);
             map.TryGetValue((bottom, right), out bottomright);
 
+            // Part two
+            var sea = new List<string>();
+            for (int y = top; y >= bottom ; y--)
+            {
+                var tileLines = new List<List<string>>();
+                for (int x = left; x <= right ; x++)
+                {
+                    var t = map[(y, x)];
+                    tileLines.Add(t.GetOrientedLinesWithOutBorder());
+                }
+                for (int i = 0; i < tileLines[0].Count; i++)
+                {
+                    string row = "";
+                    foreach (var tileLine in tileLines)
+                    {
+                        row += tileLine[i];
+                    }
+                    sea.Add(row);
+                }
+            }
+
+
+            var pattern = new List<string> {
+                "                  # ",
+                "#    ##    ##    ###",
+                " #  #  #  #  #  #   "
+            };
+            var pCount = count(pattern, '#');
+            var seaCount = count(sea, '#');
+            var seaMonsterCount = 0;
+
+            sea.Reverse();
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    var smc = matchPattern(pattern, sea);
+                    if (smc > 0)
+                    {
+                        seaMonsterCount = smc;
+                    }
+                    sea = Tile.rotateListCCW(sea);
+                }
+                sea = Tile.flipList(sea);
+            }
+
             Console.WriteLine($"Task1 solution: {topleft.ID * topright.ID * bottomright.ID * bottomleft.ID}");
+            Console.WriteLine($"Task2 solution: {seaCount - pCount * seaMonsterCount}");
             Console.ReadKey();
         }
     }
