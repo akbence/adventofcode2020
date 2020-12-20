@@ -4,7 +4,7 @@ messages = []
 #Read input
 readInput = ->
     fs = require('fs')
-    data = fs.readFileSync('../19.in', 'UTF-8')
+    data = fs.readFileSync('../input.txt', 'UTF-8')
 
     lines = data.split(/\r?\n/)
     phase = 1
