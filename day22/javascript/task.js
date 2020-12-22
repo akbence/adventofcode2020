@@ -51,109 +51,58 @@ function task1(d1, d2) {
 }
 
 function task2(d1, d2) {
-  var deck1 = d1.slice();
-  var deck2 = d2.slice();
-  var round = 0
-  var maxLen= deck1.length + deck2.length 
-  while(!(deck1.length == maxLen || deck2.length == maxLen) && round < 20){
-    round ++
-    var card1 = deck1.shift()
-    var card2 = deck2.shift()
-    console.log("ROUND "+  round)
-    console.log(deck1)
-    console.log(deck2)
-    console.log("p1 plays: " + card1)
-    console.log("p2 plays: " + card2)
-    winner = 0
-    if (deck1.length >= card1 && deck2.length >= card2){
-      console.log("SUB-GAME AT: " + round)
-      winner = task2SubGame(deck1.slice(0,card1), deck2.slice(0,card2))
-    }
-
-    if(winner == 1){
-      deck1.push(card1)
-      deck1.push(card2)
-    }else if(winner == 2){
-      deck2.push(card2)
-      deck2.push(card1)
-    }else if(card1 > card2){
-      deck1.push(card1)
-      deck1.push(card2)
-    }else if(card1 < card2){
-      deck2.push(card2)
-      deck2.push(card1)
-    }
-    console.log("GOING NEXT ROUND WITH: " + deck1 + "-" + deck2)
-  }
-
-  winningDeck = deck1.length == maxLen ? deck1 : deck2
-  score = 0;
-  for (let index = 0; index < maxLen; index++) {
-    score += (maxLen-index) * winningDeck[index]
-  }
-  return score
+  var winner,de1,de2
+  [de1,de2,winner] = recursiveCombat(d1,d2)
+  var winningDeck = winner == 1 ? de1 : de2
+  return winningDeck.reverse().map((d,i) => d*(i+1)).reduce((p,c) => p+c)
 }
 
-function task2SubGame(d1,d2){
-  var deck1 = d1.slice();
-  var deck2 = d2.slice();
-  var round = 0
-  var maxLen= deck1.length + deck2.length
-  while(!(deck1.length == maxLen || deck2.length == maxLen)){
-    round ++
-    var card1 = deck1.shift()
-    var card2 = deck2.shift()
 
-    console.log("SUB ROUND "+  round)
-    console.log(deck1)
-    console.log(deck2)
-    console.log("p1 plays: " + card1)
-    console.log("p2 plays: " + card2)
+function signaller(deck1, deck2){
+  return deck1.join(",") +"#"+deck2.join(",")
+}
 
-    winner = 0
-    if (deck1.length >= card1 && deck2.length >= card2){
-      winner = task2SubGame(deck1.slice(0,card1), deck2.slice(0,card2))
-    }
-    if(winner == 1){
-      deck1.push(card1)
-      deck1.push(card2)
-      winner = 0
-    }
-
-    if(winner == 2){
-      deck2.push(card2)
-      deck2.push(card1)
-      winner = 0
-    }
-
-    if(card1 > card2 && winner != 2){
-      deck1.push(card1)
-      deck1.push(card2)
-    }
-    
-    if(card1 < card2 && winner != 1){
-      deck2.push(card2)
-      deck2.push(card1)
-    }
-    if (deck1.length == 0){
-      winner = 2;
-    }
-    if (deck2.length == 0){
-      winner = 1
-    }
-
-    if (winner != 0){
-      console.log("FOUND WINNER: " + winner)
-      return winner
-    }
-
+function round(d1,d2){
+  var deck1 = d1.slice()
+  var deck2 = d2.slice()
+  var card1 = deck1.shift()
+  var card2 = deck2.shift()
+  var winner = 1;
+  if (deck1.length < card1 || deck2.length < card2){
+    winner = card1 > card2 ? 1 : 2
+  } else {
+    var a,b
+    [a,b,winner] = recursiveCombat(deck1.slice(0,card1),deck2.slice(0,card2))
   }
-  return deck1.length == maxLen ? 1 : 2
+  if (winner == 1 ){
+    deck1.push(card1)
+    deck1.push(card2)
+  } else {
+    deck2.push(card2)
+    deck2.push(card1)
+  }
+  return [deck1,deck2,winner]
 }
 
-function XOR(a,b) {
-  return ( a || b ) && !( a && b );
+function recursiveCombat(d1,d2){
+  var deck1 = d1.slice()
+  var deck2 = d2.slice()
+  var memory = new Map()
+  while(!memory.has(signaller(deck1,deck2)) &&deck1.length !=0 && deck2.length !=0){
+    memory.set(signaller(deck1,deck2),true)
+    var a,b
+    [a,b] = round(deck1,deck2)
+    deck1 = a
+    deck2 = b
+  }
+  var winner = 1
+  if (deck1.length == 0){
+    winner = 2
+  }
+
+  return [deck1,deck2,winner]
 }
+
 
 createDecks(input)
 console.log("Task1 solution: "+ task1(d1,d2))
