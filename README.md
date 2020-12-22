@@ -33,5 +33,5 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 18](https://github.com/akbence/adventofcode2020/tree/master/day18)    | [Operation Order](https://github.com/akbence/adventofcode2020/blob/master/day18/task.md)     |  Ruby (also in Python)   |
 | [Day 19](https://github.com/akbence/adventofcode2020/tree/master/day19)    | [Monster Messages](https://github.com/akbence/adventofcode2020/blob/master/day19/task.md)     |  Coffeescript   |
 | [Day 20](https://github.com/akbence/adventofcode2020/tree/master/day20)    | [Jurassic Jigsaw](https://github.com/akbence/adventofcode2020/blob/master/day20/task.md)     |  C#   |
-| [Day 21](https://github.com/akbence/adventofcode2020/tree/master/day21)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day21/task.md)     |  Java   |
-
+| [Day 21](https://github.com/akbence/adventofcode2020/tree/master/day21)    | [Allergen Assessment](https://github.com/akbence/adventofcode2020/blob/master/day21/task.md)     |  Java   |
+| [Day 22](https://github.com/akbence/adventofcode2020/tree/master/day22)    | [Crab Combat](https://github.com/akbence/adventofcode2020/blob/master/day22/task.md)     |  JavaScript (ES6)   |
