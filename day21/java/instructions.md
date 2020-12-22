@@ -15,6 +15,6 @@ You can get it from the Oracle's official website.
 3.) Expected result should be:
 
 ```
-Task 1 solution: 262738554
-Task 2 solution: 262738554
+Task1 solution: 2020
+Task1 solution: bcdgf,xhrdsl,vndrb,dhbxtb,lbnmsr,scxxn,bvcrrfbr,xcgtv
 ```
