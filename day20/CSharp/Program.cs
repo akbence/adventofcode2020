@@ -76,7 +76,7 @@ namespace CSharp
     {
         static List<string> readInput()
         {
-            return new List<string>(System.IO.File.ReadAllLines("../../../../input.txt"));
+            return new List<string>(System.IO.File.ReadAllLines("../../input.txt"));
         }
 
         static bool tryTile(Tile tile, (int, int) pos, Dictionary<(int, int), Tile> map)
