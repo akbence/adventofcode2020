@@ -36,5 +36,5 @@ We would like to achieve, to finish all the task, with different programming lan
 | [Day 21](https://github.com/akbence/adventofcode2020/tree/master/day21)    | [Allergen Assessment](https://github.com/akbence/adventofcode2020/blob/master/day21/task.md)     |  Java   |
 | [Day 22](https://github.com/akbence/adventofcode2020/tree/master/day22)    | [Crab Combat](https://github.com/akbence/adventofcode2020/blob/master/day22/task.md)     |  JavaScript (ES6)   |
 | [Day 23](https://github.com/akbence/adventofcode2020/tree/master/day23)    | [Crab Cups](https://github.com/akbence/adventofcode2020/blob/master/day23/task.md)     |  Go   |
-| [Day 24](https://github.com/akbence/adventofcode2020/tree/master/day24)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day24/task.md)     |  TBA   |
-| [Day 25](https://github.com/akbence/adventofcode2020/tree/master/day25)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day25/task.md)     |  TBA   |
+| [Day 24](https://github.com/akbence/adventofcode2020/tree/master/day24)    | [Lobby Layout](https://github.com/akbence/adventofcode2020/blob/master/day24/task.md)     |  Dart   |
+| [Day 25](https://github.com/akbence/adventofcode2020/tree/master/day25)    | [TBA](https://github.com/akbence/adventofcode2020/blob/master/day25/task.md)     |  Python   |
