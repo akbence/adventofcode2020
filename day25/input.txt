@@ -1,2 +1,2 @@
-sample input1
-sample input2
+1717001
+523731
